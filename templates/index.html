@@ -1,0 +1,3115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>URUK Study House</title>
+
+    <meta name="description"
+          content="URUK Study House — Study, Work, Create. A comfortable space for studying, working, learning and creating in Amman.">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap"
+          rel="stylesheet">
+
+   
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+           <img src="{{ url_for('static', filename='images/uruk-logo.png') }}"
+           alt="URUK Study House"
+           style="display:block !important; width:64px !important; height:64px !important;">
+        </a>
+
+        <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open Menu">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <nav class="nav-links"
+             id="navLinks">
+
+            <a href="#home">
+                HOME
+            </a>
+
+            <a href="#about">
+                ABOUT URUK
+            </a>
+
+            <a href="#spaces">
+                SPACES
+            </a>
+
+            <a href="#lectures">
+                LECTURES
+            </a>
+
+            <a href="#rooms">
+                ROOMS
+            </a>
+
+            <a href="#discover">
+                DISCOVER
+            </a>
+
+            <a href="#menu">
+                MENU
+            </a>
+
+            <a href="#location">
+                CONTACT
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HOME / HERO
+===================================================== -->
+
+<section class="hero"
+         id="home">
+
+    <div class="hero-background">
+
+        <img src="{{ url_for('static', filename='images/hero-image.jpeg') }}"
+             alt="URUK Study House">
+
+    </div>
+
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+        
+
+
+        <p class="hero-small">
+            STUDY • WORK • CREATE
+        </p>
+
+
+        <h1>
+
+            Where Productivity
+            <span>Meets Comfort.</span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            A thoughtfully designed space for
+            focused study, productive work,
+            meaningful learning and good coffee.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="#rooms"
+               class="btn btn-primary">
+
+                BOOK YOUR ROOM
+
+            </a>
+
+
+            <a href="#about"
+               class="btn btn-outline">
+
+                EXPLORE URUK
+
+            </a>
+
+        </div>
+
+
+        <div class="hero-stats">
+
+            <div class="stat">
+
+                <strong>
+                    24/7
+                </strong>
+
+                <span>
+                    OPEN
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    PRIVATE
+                </strong>
+
+                <span>
+                    ROOMS
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    MEDICAL • ENGINEERING • IT
+                </strong>
+
+                <span>
+                    LECTURES
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT URUK
+===================================================== -->
+
+<section class="section about"
+         id="about">
+
+    <div class="container">
+
+        <div class="section-label">
+            ABOUT URUK
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-content">
+
+                <h2>
+
+                    More than a place
+                    <span>to study.</span>
+
+                </h2>
+
+
+                <p class="lead">
+
+                    URUK was created to feel like
+                    a place you naturally belong to.
+
+                </p>
+
+
+                <p>
+
+                    A comfortable study house where
+                    you can sit for hours, focus on
+                    what matters, take a break,
+                    grab your favorite drink and
+                    simply feel at home.
+
+                </p>
+
+
+                <p>
+
+                    Whether you prefer the energy of
+                    the Public Area or the calm of
+                    the Silent Area, every corner is
+                    designed to make your study time
+                    more comfortable and productive.
+
+                </p>
+
+
+                <div class="about-highlight">
+
+                    <span class="highlight-line"></span>
+
+                    <p>
+
+                        Your space.
+                        Your pace.
+                        Your URUK.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-image">
+
+                <img src="{{ url_for('static', filename='images/uruk-interior.jpeg') }}"
+                     alt="URUK Lounge">
+
+            </div>
+
+        </div>
+
+
+       <!-- ABOUT FEATURES -->
+
+<div class="about-features">
+
+    <div class="about-feature">
+
+        <span class="feature-icon">
+            01
+        </span>
+
+        <h3>
+            Comfortable Spaces
+        </h3>
+
+        <p>
+            Cozy and comfortable spaces designed
+            to help you study, work and stay focused.
+        </p>
+
+    </div>
+
+
+    <div class="about-feature">
+
+        <span class="feature-icon">
+            02
+        </span>
+
+        <h3>
+            Smart Screens
+        </h3>
+
+        <p>
+            Smart screens available to support
+            presentations, studying and group work.
+        </p>
+
+    </div>
+
+
+    <div class="about-feature">
+
+        <span class="feature-icon">
+            03
+        </span>
+
+        <h3>
+            Open 24 Hours
+        </h3>
+
+        <p>
+            Study and work whenever you need,
+            with URUK open around the clock.
+        </p>
+
+    </div>
+
+
+    <div class="about-feature">
+
+        <span class="feature-icon">
+            04
+        </span>
+
+        <h3>
+            Food & Drinks
+        </h3>
+
+        <p>
+            Enjoy a variety of coffee, drinks,
+            food and sweet treats during your stay.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SPACES
+===================================================== -->
+
+<section class="section spaces"
+         id="spaces">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <div class="section-label">
+                FIND YOUR SPACE
+            </div>
+
+            <h2>
+
+                Choose the atmosphere
+                <span>that fits you.</span>
+
+            </h2>
+
+            <p>
+
+                Whether you like a little background
+                energy or complete concentration,
+                URUK has a space for your kind of day.
+
+            </p>
+
+        </div>
+
+
+        <div class="spaces-grid">
+
+
+            <!-- PUBLIC AREA -->
+
+            <article class="space-card">
+
+                <div class="space-image">
+
+                    <img src="{{ url_for('static', filename='images/hero-image.jpeg') }}"
+                         alt="URUK Public Area">
+
+                </div>
+
+
+                <div class="space-content">
+
+                    <span class="space-number">
+                        01
+                    </span>
+
+
+                    <h3>
+                        Public Area
+                    </h3>
+
+
+                    <p>
+
+                        A welcoming open space where
+                        you can study, work, meet friends
+                        or enjoy a coffee while getting
+                        things done.
+
+                    </p>
+
+
+                    <div class="space-note">
+
+                        <strong>
+                            NO ENTRANCE FEE
+                        </strong>
+
+                        <span>
+
+                            Just order your favorite
+                            drink and make yourself
+                            comfortable.
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- SILENT AREA -->
+
+            <article class="space-card">
+
+                <div class="space-image">
+
+                    <img src="{{ url_for('static', filename='images/uruk-interior.jpeg') }}"
+                         alt="URUK Silent Area">
+
+                </div>
+
+
+                <div class="space-content">
+
+                    <span class="space-number">
+                        02
+                    </span>
+
+
+                    <h3>
+                        Silent Area
+                    </h3>
+
+
+                    <p>
+
+                        A calm and quiet environment
+                        for deep focus, studying and
+                        uninterrupted work.
+
+                    </p>
+
+
+                    <div class="space-note">
+
+                        <strong>
+                            NO ENTRANCE FEE
+                        </strong>
+
+                        <span>
+
+                            Choose your seat,
+                            order a drink and focus.
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- EXTRA PLACE IMAGE -->
+
+        <div class="spaces-feature">
+
+            <div class="spaces-feature-image">
+
+                <img src="{{ url_for('static', filename='images/hero-image.jpeg') }}"
+                     alt="URUK Study Environment">
+
+            </div>
+
+
+            <div class="spaces-feature-content">
+
+                <div class="section-label">
+                    YOUR EVERYDAY SPACE
+                </div>
+
+
+                <h3>
+
+                    Come as you are.
+                    <span>Stay as long as you need.</span>
+
+                </h3>
+
+
+                <p>
+
+                    At URUK, you don't have to rush.
+                    Bring your laptop, your books,
+                    your notes or your ideas.
+
+                </p>
+
+
+                <p>
+
+                    Find your favorite corner,
+                    connect to the internet,
+                    use the available facilities,
+                    order something you love and
+                    let the space do the rest.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LECTURES
+===================================================== -->
+
+<section class="section lectures" id="lectures">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <div class="section-label">
+                LEARN AT URUK
+            </div>
+
+            <h2>
+                Learn. Grow.
+                <span>Achieve.</span>
+            </h2>
+
+            <p>
+                URUK offers educational lectures
+                both in-person and online for
+                university students.
+            </p>
+
+        </div>
+
+
+        <div class="lecture-intro">
+
+            <div class="lecture-intro-image">
+
+                <img src="{{ url_for('static', filename='images/teaching-room.jpeg') }}"
+                     alt="URUK Teaching Room">
+
+            </div>
+
+
+            <div class="lecture-intro-content">
+
+                <span>
+                    LECTURES AT URUK
+                </span>
+
+                <h3>
+                    Learn your way.
+                </h3>
+
+                <p>
+                    Join our lectures either
+                    in-person at URUK or online
+                    from wherever you are.
+                </p>
+
+                <p>
+                    Lectures are available in
+                    three main fields.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- THREE SPECIALIZATIONS -->
+
+        <div class="lecture-grid">
+
+
+            <article class="lecture-card">
+
+                <span class="lecture-number">
+                    01
+                </span>
+
+                <div class="lecture-icon">
+                    MED
+                </div>
+
+                <h3>
+                    Medical
+                </h3>
+
+                <p>
+                    Lectures for medical
+                    and health-related subjects.
+                </p>
+
+                <span class="lecture-tag">
+                    MEDICAL SCIENCES
+                </span>
+
+            </article>
+
+
+
+            <article class="lecture-card">
+
+                <span class="lecture-number">
+                    02
+                </span>
+
+                <div class="lecture-icon">
+                    ENG
+                </div>
+
+                <h3>
+                    Engineering
+                </h3>
+
+                <p>
+                    Lectures for engineering
+                    and university subjects.
+                </p>
+
+                <span class="lecture-tag">
+                    ENGINEERING
+                </span>
+
+            </article>
+
+
+
+            <article class="lecture-card">
+
+                <span class="lecture-number">
+                    03
+                </span>
+
+                <div class="lecture-icon">
+                    IT
+                </div>
+
+                <h3>
+                    IT & Computer Science
+                </h3>
+
+                <p>
+                    Lectures covering programming,
+                    IT and computer science.
+                </p>
+
+                <span class="lecture-tag">
+                    IT & COMPUTER SCIENCE
+                </span>
+
+            </article>
+
+
+        </div>
+         <!-- =================================================
+             LECTURE CONTACT
+        ================================================= -->
+
+        <div class="lecture-contact">
+
+            <h3>
+                Interested in giving a lecture at URUK?
+            </h3>
+
+            <p>
+                If you’re interested in hosting a lecture,
+                workshop, or academic session at URUK,
+                we’d love to hear from you.
+            </p>
+
+            <a href="https://wa.me/962795379625"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary">
+
+                CONTACT US ON WHATSAPP
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ROOMS BOOKING
+===================================================== -->
+
+<section class="section rooms"
+         id="rooms">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <div class="section-label">
+                ROOMS BOOKING
+            </div>
+
+            <h2>
+
+                Your own room.
+                <span>Your own focus.</span>
+
+            </h2>
+
+            <p>
+
+                Choose the room according to
+                your group size and book your
+                preferred space by the hour.
+
+            </p>
+
+        </div>
+
+
+        <div class="rooms-grid">
+
+
+            <!-- ROOM 01 -->
+
+            <article class="room-card">
+
+                <div class="room-image">
+
+                    <img src="{{ url_for('static', filename='images/teaching-room.jpeg') }}"
+                         alt="URUK Room 01">
+
+                </div>
+
+
+                <div class="room-body">
+
+                    <div class="room-top">
+
+                        <span>
+                            ROOM 01
+                        </span>
+
+                        <span class="room-price">
+                            2 JD / HOUR
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Small Room
+                    </h3>
+
+
+                    <p>
+
+                        A private space for focused
+                        individual study or a small
+                        study session.
+
+                    </p>
+
+
+                    <div class="room-capacity">
+
+                        <span>
+                            CAPACITY
+                        </span>
+
+                        <strong>
+                            UP TO 2 PEOPLE
+                        </strong>
+
+                    </div>
+
+
+                    <a 
+                       href="/booking/1"
+                       class="room-button">
+                          BOOK THIS ROOM
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ROOM 02 -->
+
+            <article class="room-card">
+
+                <div class="room-image">
+
+                    <img src="{{ url_for('static', filename='images/public-area.jpeg') }}"
+                         alt="URUK Room 02">
+
+                </div>
+
+
+                <div class="room-body">
+
+                    <div class="room-top">
+
+                        <span>
+                            ROOM 02
+                        </span>
+
+                        <span class="room-price">
+                            4 JD / HOUR
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Study Room
+                    </h3>
+
+
+                    <p>
+
+                        A comfortable room for
+                        small study groups and
+                        collaborative work.
+
+                    </p>
+
+
+                    <div class="room-capacity">
+
+                        <span>
+                            CAPACITY
+                        </span>
+
+                        <strong>
+                            UP TO 4 PEOPLE
+                        </strong>
+
+                    </div>
+
+
+                    <a href="/booking/2"
+                       class="room-button"
+                       target="_blank">
+
+                        BOOK THIS ROOM
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ROOM 03 -->
+
+            <article class="room-card">
+
+                <div class="room-image">
+
+                    <img src="{{ url_for('static', filename='images/lounge.jpeg') }}"
+                         alt="URUK Room 03">
+
+                </div>
+
+
+                <div class="room-body">
+
+                    <div class="room-top">
+
+                        <span>
+                            ROOM 03
+                        </span>
+
+                        <span class="room-price">
+                            4 JD / HOUR
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Group Room
+                    </h3>
+
+
+                    <p>
+
+                        A practical space for
+                        group study, projects
+                        and discussions.
+
+                    </p>
+
+
+                    <div class="room-capacity">
+
+                        <span>
+                            CAPACITY
+                        </span>
+
+                        <strong>
+                            UP TO 6 PEOPLE
+                        </strong>
+
+                    </div>
+
+
+                    <a href="/booking/3"
+                       class="room-button"
+                       target="_blank">
+
+                        BOOK THIS ROOM
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ROOM 04 -->
+
+            <article class="room-card">
+
+                <div class="room-image">
+
+                    <img src="{{ url_for('static', filename='images/uruk-interior.jpeg') }}"
+                         alt="URUK Room 04">
+
+                </div>
+
+
+                <div class="room-body">
+
+                    <div class="room-top">
+
+                        <span>
+                            ROOM 04
+                        </span>
+
+                        <span class="room-price">
+                            6 JD / HOUR
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Large Study Room
+                    </h3>
+
+
+                    <p>
+
+                        More space for larger
+                        study groups, meetings
+                        and academic sessions.
+
+                    </p>
+
+
+                    <div class="room-capacity">
+
+                        <span>
+                            CAPACITY
+                        </span>
+
+                        <strong>
+                            UP TO 12 PEOPLE
+                        </strong>
+
+                    </div>
+
+
+                    <a href="/booking/4"
+                       class="room-button"
+                       target="_blank">
+
+                        BOOK THIS ROOM
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ROOM 05 -->
+
+            <article class="room-card">
+
+                <div class="room-image">
+
+                    <img src="{{ url_for('static', filename='images/hero-image.jpeg') }}"
+                         alt="URUK Room 05">
+
+                </div>
+
+
+                <div class="room-body">
+
+                    <div class="room-top">
+
+                        <span>
+                            ROOM 05
+                        </span>
+
+                        <span class="room-price">
+                            8 JD / HOUR
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Group Space
+                    </h3>
+
+
+                    <p>
+
+                        A larger space for group
+                        projects, workshops and
+                        collaborative sessions.
+
+                    </p>
+
+
+                    <div class="room-capacity">
+
+                        <span>
+                            CAPACITY
+                        </span>
+
+                        <strong>
+                            UP TO 22 PEOPLE
+                        </strong>
+
+                    </div>
+
+
+                    <a href="/booking/5"
+                       class="room-button"
+                       target="_blank">
+
+                        BOOK THIS ROOM
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ROOM 06 -->
+
+            <article class="room-card">
+
+                <div class="room-image">
+
+                    <img src="{{ url_for('static', filename='images/teaching-room.jpeg') }}"
+                         alt="URUK Room 06">
+
+                </div>
+
+
+                <div class="room-body">
+
+                    <div class="room-top">
+
+                        <span>
+                            ROOM 06
+                        </span>
+
+                        <span class="room-price">
+                            10 JD / HOUR
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Event & Lecture Room
+                    </h3>
+
+
+                    <p>
+
+                        A spacious room suitable
+                        for lectures, workshops,
+                        events and large groups.
+
+                    </p>
+
+
+                    <div class="room-capacity">
+
+                        <span>
+                            CAPACITY
+                        </span>
+
+                        <strong>
+                            UP TO 50 PEOPLE
+                        </strong>
+
+                    </div>
+
+
+                    <a href="/booking/6"
+                       class="room-button"
+                       target="_blank">
+
+                        BOOK THIS ROOM
+
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DISCOVER URUK
+===================================================== -->
+
+<section class="section discover"
+         id="discover">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <div class="section-label">
+                DISCOVER URUK
+            </div>
+
+            <h2>
+
+                Discover the little things
+                <span>that feel like URUK.</span>
+
+            </h2>
+
+            <p>
+
+                From your first coffee to your
+                favorite study corner, explore
+                the moments that make the place
+                feel like your own.
+
+            </p>
+
+        </div>
+
+
+        <!-- SWIPE CAROUSEL -->
+
+        <div class="discover-carousel">
+
+            <div class="discover-track">
+
+
+                <div class="discover-slide">
+
+                    <img src="{{ url_for('static', filename='images/drinks.jpeg') }}"
+                         alt="URUK Drink">
+
+                    <div class="discover-caption">
+
+                        <span>
+                            01
+                        </span>
+
+                       
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="discover-slide">
+
+                    <img src="{{ url_for('static', filename='images/drink1.jpeg') }}"
+                         alt="URUK Lounge">
+
+                    <div class="discover-caption">
+
+                        <span>
+                            02
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="discover-slide">
+
+                    <img src="{{ url_for('static', filename='images/drink2.jpeg') }}"
+                         alt="URUK Public Area">
+
+                    <div class="discover-caption">
+
+                        <span>
+                            03
+                        </span>
+
+                       
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="discover-slide">
+
+                    <img src="{{ url_for('static', filename='images/drink3.jpeg') }}"
+                         alt="URUK Interior">
+
+                    <div class="discover-caption">
+
+                        <span>
+                            04
+                        </span>
+
+                       
+                    </div>
+
+                </div>
+
+
+
+                <div class="discover-slide">
+
+                    <img src="{{ url_for('static', filename='images/items.jpeg') }}"
+                    
+                         alt="URUK Study House">
+
+                    <div class="discover-caption">
+
+                        <span>
+                            05
+                        </span>
+
+                       
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- CAROUSEL DOTS -->
+
+            <div class="discover-dots">
+
+                <button
+                    class="discover-dot active"
+                    data-slide="0"
+                    aria-label="Slide 1">
+                </button>
+
+                <button
+                    class="discover-dot"
+                    data-slide="1"
+                    aria-label="Slide 2">
+                </button>
+
+                <button
+                    class="discover-dot"
+                    data-slide="2"
+                    aria-label="Slide 3">
+                </button>
+
+                <button
+                    class="discover-dot"
+                    data-slide="3"
+                    aria-label="Slide 4">
+                </button>
+
+                <button
+                    class="discover-dot"
+                    data-slide="4"
+                    aria-label="Slide 5">
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     URUK MENU
+===================================================== -->
+
+<section class="section menu-section"
+         id="menu"
+         dir="rtl">
+
+
+    <!-- =================================================
+         MENU HEADER
+    ================================================= -->
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <div class="section-label">
+                URUK MENU
+            </div>
+
+            <h2>
+                Your favorite
+                <span>flavors</span>
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         MENU QUICK NAVIGATION
+    ================================================= -->
+
+    <div class="menu-nav-sticky">
+
+        <div class="menu-nav">
+
+            <a href="#hot-drinks"
+               class="menu-nav-btn active">
+                HOT DRINKS
+            </a>
+
+            <a href="#cold-drinks"
+               class="menu-nav-btn">
+                COLD DRINKS
+            </a>
+
+            <a href="#juice"
+               class="menu-nav-btn">
+                JUICE
+            </a>
+
+            <a href="#mojito"
+               class="menu-nav-btn">
+                MOJITO
+            </a>
+
+            <a href="#salads"
+               class="menu-nav-btn">
+                SALADS
+            </a>
+
+            <a href="#sandwiches"
+               class="menu-nav-btn">
+                SANDWICHES
+            </a>
+
+            <a href="#desserts"
+               class="menu-nav-btn">
+                DESSERTS
+            </a>
+
+        </div>
+
+    </div>
+        <!-- =================================================
+             HOT DRINKS
+        ================================================= -->
+
+
+            <!-- COFFEE -->
+
+            <div class="menu-subcategory"
+            id="hot-drinks" >
+
+                <h3>
+                   Hot Drinks
+                </h3>
+
+
+                <div class="menu-items">
+
+
+                    <!-- 01 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                قهوة تركية
+                            </h4>
+
+                            <span class="english-name">
+                                Turkish Coffee
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.00
+                        </span>
+
+                    </div>
+
+
+                    <!-- 02 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                قهوة أمريكان
+                            </h4>
+
+                            <span class="english-name">
+                                American Coffee
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            1.75
+                        </span>
+
+                    </div>
+
+
+                    <!-- 03 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                قهوة إسبريسو
+                            </h4>
+
+                            <span class="english-name">
+                                Espresso
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            1.75
+                        </span>
+
+                    </div>
+
+
+                    <!-- 04 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                أمريكانو
+                            </h4>
+
+                            <span class="english-name">
+                                Americano
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.00
+                        </span>
+
+                    </div>
+
+
+                    <!-- 05 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                لاتيه
+                            </h4>
+
+                            <span class="english-name">
+                                Latte
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.50
+                        </span>
+
+                    </div>
+
+
+                    <!-- 06 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                كابتشينو
+                            </h4>
+
+                            <span class="english-name">
+                                Cappuccino
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.50
+                        </span>
+
+                    </div>
+
+
+                    <!-- 07 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                فلات وايت
+                            </h4>
+
+                            <span class="english-name">
+                                Flat White
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.50
+                        </span>
+
+                    </div>
+
+
+                    <!-- 08 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                سبانش لاتيه
+                            </h4>
+
+                            <span class="english-name">
+                                Spanish Latte
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.00
+                        </span>
+
+                    </div>
+
+
+                    <!-- 09 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                كراميل ميكاتو
+                            </h4>
+
+                            <span class="english-name">
+                                Caramel Macchiato
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.50
+                        </span>
+
+                    </div>
+
+
+                    <!-- 10 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                موكا
+                            </h4>
+
+                            <span class="english-name">
+                                Mocha
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.00
+                        </span>
+
+                    </div>
+
+
+                    <!-- 11 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                هوت شوكليت
+                            </h4>
+
+                            <span class="english-name">
+                                Hot Chocolate
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.50
+                        </span>
+
+                    </div>
+
+
+                    <!-- 12 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                بستاشيو
+                            </h4>
+
+                            <span class="english-name">
+                                Pistachio
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.50
+                        </span>
+
+                    </div>
+
+
+                    <!-- 13 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                ماتشا
+                            </h4>
+
+                            <span class="english-name">
+                                Matcha
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.50
+                        </span>
+
+                    </div>
+
+
+                    <!-- 14 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                شاي نكهات
+                            </h4>
+
+                            <span class="english-name">
+                                Flavored Tea
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.00
+                        </span>
+
+                    </div>
+
+
+                    <!-- 15 -->
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                V60 COFFEE
+                            </h4>
+
+                            <span class="english-name">
+                                V60 Coffee
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.50
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ADD ONS
+            ================================================= -->
+
+            <div class="menu-subcategory"
+            id="cold-drinks" >
+
+                <h3>
+                    ADD-ONS
+                </h3>
+
+
+                <div class="menu-items">
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                إضافة نكهات
+                            </h4>
+
+                            <span class="english-name">
+                                Extra Flavors
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            0.25
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                إضافة حليب
+                            </h4>
+
+                            <span class="english-name">
+                                Extra Milk
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            0.50
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                إضافة كريمة
+                            </h4>
+
+                            <span class="english-name">
+                                Extra Cream
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            0.50
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                إضافة إسبريسو
+                            </h4>
+
+                            <span class="english-name">
+                                Extra Espresso
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            0.75
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             COLD DRINKS
+        ================================================= -->
+
+
+
+
+            <!-- COFFEE -->
+
+            <div class="menu-subcategory">
+
+                <h3>
+                   Cold Drinks
+                </h3>
+
+
+                <div class="menu-items">
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                آيس فانيلا
+                            </h4>
+
+                            <span class="english-name">
+                                Iced Vanilla
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.50
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                آيس سبانش لاتيه
+                            </h4>
+
+                            <span class="english-name">
+                                Iced Spanish Latte
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.00
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                آيس لاتيه
+                            </h4>
+
+                            <span class="english-name">
+                                Iced Latte
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.50
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                آيس أمريكانو
+                            </h4>
+
+                            <span class="english-name">
+                                Iced Americano
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.00
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                آيس موكا
+                            </h4>
+
+                            <span class="english-name">
+                                Iced Mocha
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.00
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                آيس كراميل ميكاتو
+                            </h4>
+
+                            <span class="english-name">
+                                Iced Caramel Macchiato
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.50
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                آيس بستاشيو لاتيه
+                            </h4>
+
+                            <span class="english-name">
+                                Iced Pistachio Latte
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.50
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                آيس ماتشا
+                            </h4>
+
+                            <span class="english-name">
+                                Iced Matcha
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.50
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                آيس فرابتشينو
+                            </h4>
+
+                            <span class="english-name">
+                                Iced Frappuccino
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.50
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                شاي مثلج
+                            </h4>
+
+                            <span class="english-name">
+                                Iced Tea
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.50
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 JUICE
+            ================================================= -->
+
+            <div class="menu-subcategory"
+                 id="juice">
+
+                <h3>
+                    JUICE
+                </h3>
+
+
+                <div class="menu-items">
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                عصير برتقال
+                            </h4>
+
+                            <span class="english-name">
+                                Orange Juice
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.50
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                عصير مانجا
+                            </h4>
+
+                            <span class="english-name">
+                                Mango Juice
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.50
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                سموذي
+                            </h4>
+
+                            <span class="english-name">
+                                Smoothie
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.00
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MOJITO
+            ================================================= -->
+
+            <div class="menu-subcategory"
+                 id="mojito">
+
+                <h3>
+                    MOJITO
+                </h3>
+
+
+                <div class="menu-items">
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                موهيتو صودا
+                            </h4>
+
+                            <span class="english-name">
+                                Mojito Soda
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.50
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                موهيتو بوم بوم
+                            </h4>
+
+                            <span class="english-name">
+                                Boom Boom Mojito
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.00
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                موهيتو كورد
+                            </h4>
+
+                            <span class="english-name">
+                                Mojito Cord
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.00
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                موهيتو ريدبول
+                            </h4>
+
+                            <span class="english-name">
+                                Mojito Red Bull
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.50
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+            <!-- =================================================
+                 SALADS
+            ================================================= -->
+
+            <div class="menu-subcategory"
+                 id="salads">
+
+                <h3>
+                    SALADS
+                </h3>
+
+
+                <div class="menu-items">
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                سيزر تشكن
+                            </h4>
+
+                            <span class="english-name">
+                                Caesar Chicken
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.75
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                سيزر
+                            </h4>
+
+                            <span class="english-name">
+                                Caesar Salad
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.00
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                جريك
+                            </h4>
+
+                            <span class="english-name">
+                                Greek Salad
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.25
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                تونا
+                            </h4>
+
+                            <span class="english-name">
+                                Tuna Salad
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.25
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                روكا
+                            </h4>
+
+                            <span class="english-name">
+                                Roka Salad
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.00
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SANDWICHES
+            ================================================= -->
+
+            <div class="menu-subcategory"
+                 id="sandwiches">
+
+                <h3>
+                    SANDWICHES
+                </h3>
+
+
+                <div class="menu-items">
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                ساندويش سيزر تشكن
+                            </h4>
+
+                            <span class="english-name">
+                                Caesar Chicken Sandwich
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.75
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                ساندويش حلوم
+                            </h4>
+
+                            <span class="english-name">
+                                Halloumi Sandwich
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.50
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                ساندويش تركي
+                            </h4>
+
+                            <span class="english-name">
+                                Turkey Sandwich
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.00
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                ساندويش مكس أجبان
+                            </h4>
+
+                            <span class="english-name">
+                                Mixed Cheese Sandwich
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.25
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DESSERTS
+            ================================================= -->
+
+            <div class="menu-subcategory"
+                 id="desserts">
+
+                <h3>
+                    DESSERTS
+                </h3>
+
+
+                <div class="menu-items">
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                مافن
+                            </h4>
+
+                            <span class="english-name">
+                                Muffin
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            1.75
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                ليزي كيك
+                            </h4>
+
+                            <span class="english-name">
+                                Lazy Cake
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            1.75
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                تيراميسو
+                            </h4>
+
+                            <span class="english-name">
+                                Tiramisu
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.25
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                تشيز كيك
+                            </h4>
+
+                            <span class="english-name">
+                                Cheesecake
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.00
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                كيكة دبي
+                            </h4>
+
+                            <span class="english-name">
+                                Dubai Cake
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            3.50
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                تشوكلت دبي
+                            </h4>
+
+                            <span class="english-name">
+                                Dubai Chocolate
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.50
+                        </span>
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <div class="menu-item-top">
+
+                            <h4>
+                                براونيز
+                            </h4>
+
+                            <span class="english-name">
+                                Brownies
+                            </span>
+
+                        </div>
+
+                        <span class="price">
+                            2.50
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             BACK TO TOP OF MENU
+        ================================================= -->
+
+        <div class="menu-back-top">
+
+            <a href="#menu">
+
+                ↑ BACK TO MENU
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     LOCATION
+===================================================== -->
+
+<section class="section location"
+         id="location">
+
+    <div class="container">
+
+        <div class="location-box">
+
+
+            <div class="location-content">
+
+                <div class="section-label">
+                    FIND URUK
+                </div>
+
+
+                <h2>
+
+                    Your next
+                    <span>study spot.</span>
+
+                </h2>
+
+
+                <p class="location-text">
+
+                    Come in, find your favorite spot,
+                    order your drink and make your
+                    time count.
+
+                </p>
+
+
+                <div class="location-details">
+
+
+                    <div>
+
+                        <span>
+                            LOCATION
+                        </span>
+
+                        <strong>
+
+                            Khalifa Complex —
+                            University Street, Amman
+
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            OPENING HOURS
+                        </span>
+
+                        <strong>
+                            OPEN 24 HOURS
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="social-buttons">
+
+
+                    <a href="https://www.instagram.com/urukacademy.jo/"
+                       target="_blank"
+                       class="social-btn">
+
+                        INSTAGRAM
+
+                    </a>
+
+
+                    <a href="https://www.facebook.com/people/Uruk-Academy/61572008355777/"
+                       target="_blank"
+                       class="social-btn">
+
+                        FACEBOOK
+
+                    </a>
+
+
+                    <a href="https://maps.app.goo.gl/diJiGL4UcKxRMjwPA"
+                       target="_blank"
+                       class="social-btn">
+
+                        GOOGLE MAPS
+
+                    </a>
+
+
+                   <a href="https://wa.me/962795379625"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="social-btn whatsapp">
+
+    WHATSAPP
+
+</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="location-image">
+
+                <img src="{{ url_for('static', filename='images/hero-image.jpeg') }}"
+                     alt="URUK Study House">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="final-cta">
+
+    <div class="cta-background">
+
+        <img src="{{ url_for('static', filename='images/cta-image.jpeg') }}"
+             alt="URUK Study House">
+
+    </div>
+
+
+    <div class="cta-overlay"></div>
+
+
+    <div class="cta-content">
+
+        <div class="section-label">
+            URUK STUDY HOUSE
+        </div>
+
+
+        <h2>
+
+            Give your goals
+            <span>the right space.</span>
+
+        </h2>
+
+
+        <p>
+            Study • Work • Create
+        </p>
+
+
+        <a href="#rooms"
+           class="btn btn-primary">
+
+            BOOK YOUR ROOM
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <img src="{{ url_for('static', filename='images/uruk-logo.png') }}"
+                     alt="URUK Study House">
+
+                <p>
+
+                    A place to study,
+                    work and create.
+
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>
+                    EXPLORE
+                </h4>
+
+
+                <a href="#about">
+                    About Uruk
+                </a>
+
+
+                <a href="#spaces">
+                    Spaces
+                </a>
+
+
+                <a href="#lectures">
+                    Lectures
+                </a>
+
+
+                <a href="#rooms">
+                    Rooms
+                </a>
+
+
+                <a href="#menu">
+                    Menu
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>
+                    CONNECT
+                </h4>
+
+
+                <a href="https://www.instagram.com/urukacademy.jo/"
+                   target="_blank">
+
+                    Instagram
+
+                </a>
+
+
+                <a href="https://www.facebook.com/people/Uruk-Academy/61572008355777/"
+                   target="_blank">
+
+                    Facebook
+
+                </a>
+
+
+                <a href="https://maps.app.goo.gl/diJiGL4UcKxRMjwPA"
+                   target="_blank">
+
+                    Google Maps
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 URUK Study House
+            </span>
+
+
+            <span>
+                Study • Work • Create
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
+
+<a href="https://wa.me/962795379625"
+   class="floating-whatsapp"
+   target="_blank"
+   rel="noopener noreferrer"
+   onclick="window.open('https://wa.me/962795379625', '_blank'); return false;">
+
+    <span>WA</span>
+
+</a>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
+           
+                   
+

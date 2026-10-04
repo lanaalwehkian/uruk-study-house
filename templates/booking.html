@@ -1,0 +1,2596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Book {{ room['name'] }} | URUK Study House
+    </title>
+
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        :root {
+
+            --bg: #091416;
+            --bg2: #0d1d20;
+            --panel: #12272a;
+            --panel2: #173034;
+
+            --cream: #eee7da;
+            --cream2: #d8cfbf;
+
+            --muted: #9ba9a5;
+
+            --gold: #c7a77a;
+            --gold2: #dec39b;
+
+            --green: #70836f;
+
+            --line:
+                rgba(238,231,218,.11);
+
+        }
+
+
+        * {
+
+            box-sizing:
+                border-box;
+
+            margin:
+                0;
+
+            padding:
+                0;
+
+        }
+
+
+        html {
+
+            scroll-behavior:
+                smooth;
+
+        }
+
+
+        body {
+
+            min-height:
+                100vh;
+
+            background:
+                var(--bg);
+
+            color:
+                var(--cream);
+
+            font-family:
+                "Inter",
+                Arial,
+                sans-serif;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        a {
+
+            text-decoration:
+                none;
+
+            color:
+                inherit;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .topbar {
+
+            height:
+                82px;
+
+            border-bottom:
+                1px solid var(--line);
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            padding:
+                0 5%;
+
+            position:
+                sticky;
+
+            top:
+                0;
+
+            z-index:
+                50;
+
+            background:
+                rgba(9,20,22,.94);
+
+            backdrop-filter:
+                blur(12px);
+
+        }
+
+
+        .logo {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+        }
+
+
+        .logo img {
+
+            width:
+                58px;
+
+            height:
+                58px;
+
+            object-fit:
+                contain;
+
+        }
+
+
+        .back {
+
+            color:
+                var(--gold);
+
+            font-size:
+                12px;
+
+            letter-spacing:
+                1.5px;
+
+            text-transform:
+                uppercase;
+
+            transition:
+                .25s;
+
+        }
+
+
+        .back:hover {
+
+            color:
+                var(--gold2);
+
+        }
+
+
+        /* =====================================================
+           PAGE
+        ===================================================== */
+
+        .page {
+
+            padding:
+                70px 20px 90px;
+
+        }
+
+
+        .container {
+
+            width:
+                min(1120px, 94%);
+
+            margin:
+                auto;
+
+        }
+
+
+        .eyebrow {
+
+            color:
+                var(--gold);
+
+            font-size:
+                11px;
+
+            letter-spacing:
+                3px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                12px;
+
+        }
+
+
+        .heading {
+
+            font-size:
+                clamp(40px, 6vw, 68px);
+
+            font-weight:
+                500;
+
+            line-height:
+                1.05;
+
+            margin-bottom:
+                15px;
+
+        }
+
+
+        .heading span {
+
+            color:
+                var(--gold2);
+
+        }
+
+
+        .intro {
+
+            color:
+                var(--muted);
+
+            max-width:
+                650px;
+
+            margin-bottom:
+                48px;
+
+        }
+
+
+        /* =====================================================
+           MAIN GRID
+        ===================================================== */
+
+        .grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                .92fr 1.08fr;
+
+            gap:
+                28px;
+
+            align-items:
+                start;
+
+        }
+
+
+        /* =====================================================
+           CARD
+        ===================================================== */
+
+        .card {
+
+            background:
+                var(--panel);
+
+            border:
+                1px solid var(--line);
+
+            border-radius:
+                20px;
+
+            overflow:
+                hidden;
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,.22);
+
+        }
+
+
+        /* =====================================================
+           ROOM IMAGE
+        ===================================================== */
+
+        .room-image {
+
+            width:
+                100%;
+
+            height:
+                330px;
+
+            object-fit:
+                cover;
+
+            display:
+                block;
+
+        }
+
+
+        .room-content {
+
+            padding:
+                30px;
+
+        }
+
+
+        .room-content h2 {
+
+            font-size:
+                30px;
+
+            font-weight:
+                500;
+
+            margin-bottom:
+                10px;
+
+        }
+
+
+        .desc {
+
+            color:
+                var(--muted);
+
+            margin-bottom:
+                25px;
+
+        }
+
+
+        /* =====================================================
+           ROOM DETAILS
+        ===================================================== */
+
+        .details {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                12px;
+
+        }
+
+
+        .detail {
+
+            background:
+                var(--panel2);
+
+            border-radius:
+                12px;
+
+            padding:
+                16px;
+
+        }
+
+
+        .detail small {
+
+            display:
+                block;
+
+            color:
+                var(--muted);
+
+            font-size:
+                10px;
+
+            letter-spacing:
+                1px;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        .detail strong {
+
+            display:
+                block;
+
+            color:
+                var(--gold2);
+
+            margin-top:
+                4px;
+
+            font-size:
+                17px;
+
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .form {
+
+            padding:
+                32px;
+
+        }
+
+
+        .form h2 {
+
+            font-size:
+                28px;
+
+            font-weight:
+                500;
+
+        }
+
+
+        .sub {
+
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+
+            margin:
+                4px 0 28px;
+
+        }
+
+
+        .group {
+
+            margin-bottom:
+                18px;
+
+        }
+
+
+        .group label {
+
+            display:
+                block;
+
+            color:
+                var(--cream2);
+
+            font-size:
+                12px;
+
+            margin-bottom:
+                7px;
+
+        }
+
+
+        .input {
+
+            width:
+                100%;
+
+            height:
+                50px;
+
+            background:
+                var(--bg2);
+
+            border:
+                1px solid
+                rgba(238,231,218,.14);
+
+            border-radius:
+                9px;
+
+            color:
+                var(--cream);
+
+            padding:
+                0 14px;
+
+            outline:
+                none;
+
+            font:
+                inherit;
+
+        }
+
+
+        .input:focus {
+
+            border-color:
+                var(--gold);
+
+        }
+
+
+        /* =====================================================
+           TIME
+        ===================================================== */
+
+        .time-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                14px;
+
+        }
+
+
+        .time-selects {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr 1.2fr;
+
+            gap:
+                7px;
+
+        }
+
+
+        .time-select {
+
+            width:
+                100%;
+
+            height:
+                50px;
+
+            padding:
+                0 10px;
+
+            border:
+                1px solid
+                rgba(238,231,218,.14);
+
+            border-radius:
+                9px;
+
+            background:
+                var(--bg2);
+
+            color:
+                var(--cream);
+
+            font-family:
+                "Inter",
+                sans-serif;
+
+            font-size:
+                12px;
+
+            outline:
+                none;
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .time-select:focus {
+
+            border-color:
+                var(--gold);
+
+            box-shadow:
+                0 0 0 2px
+                rgba(199,167,122,.08);
+
+        }
+
+
+        .time-select option {
+
+            background:
+                #102124;
+
+            color:
+                var(--cream);
+
+        }
+
+
+        .time-select.period {
+
+            color:
+                var(--gold2);
+
+            font-weight:
+                600;
+
+        }
+
+
+        .time-hint {
+
+            display:
+                block;
+
+            color:
+                rgba(155,169,165,.65);
+
+            font-size:
+                10px;
+
+            margin-top:
+                7px;
+
+        }
+
+
+        /* =====================================================
+           PRICE
+        ===================================================== */
+
+        .price {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            background:
+                var(--panel2);
+
+            padding:
+                18px;
+
+            border-radius:
+                12px;
+
+            margin:
+                24px 0;
+
+        }
+
+
+        .price-left {
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            gap:
+                2px;
+
+        }
+
+
+        .price span {
+
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+
+        }
+
+
+        .duration-text {
+
+            color:
+                var(--cream2) !important;
+
+            font-size:
+                11px !important;
+
+        }
+
+
+        .price strong {
+
+            color:
+                var(--gold2);
+
+            font-size:
+                25px;
+
+        }
+
+
+        /* =====================================================
+           BUTTON
+        ===================================================== */
+
+        .btn {
+
+            width:
+                100%;
+
+            min-height:
+                54px;
+
+            border:
+                0;
+
+            border-radius:
+                9px;
+
+            background:
+                var(--gold);
+
+            color:
+                #111;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                1.4px;
+
+            text-transform:
+                uppercase;
+
+            cursor:
+                pointer;
+
+            transition:
+                .25s;
+
+        }
+
+
+        .btn:hover {
+
+            background:
+                var(--gold2);
+
+            transform:
+                translateY(-1px);
+
+        }
+
+
+        .btn:disabled {
+
+            opacity:
+                .6;
+
+            cursor:
+                not-allowed;
+
+            transform:
+                none;
+
+        }
+
+
+        /* =====================================================
+           MESSAGE
+        ===================================================== */
+
+        .message {
+
+            display:
+                none;
+
+            margin-top:
+                16px;
+
+            padding:
+                16px;
+
+            border-radius:
+                10px;
+
+            font-size:
+                13px;
+
+        }
+
+
+        .message.success {
+
+            display:
+                block;
+
+            background:
+                rgba(112,131,111,.18);
+
+            border:
+                1px solid var(--green);
+
+            color:
+                #cfe0cf;
+
+        }
+
+
+        .message.error {
+
+            display:
+                block;
+
+            background:
+                rgba(160,70,70,.15);
+
+            border:
+                1px solid #a05a5a;
+
+            color:
+                #e5bcbc;
+
+        }
+
+
+        /* =====================================================
+           UNAVAILABLE BOX
+        ===================================================== */
+
+        .unavailable-box {
+
+            text-align:
+                center;
+
+        }
+
+
+        .unavailable-icon {
+
+            font-size:
+                25px;
+
+            margin-bottom:
+                6px;
+
+        }
+
+
+        .unavailable-title {
+
+            color:
+                var(--cream);
+
+            font-size:
+                15px;
+
+            font-weight:
+                600;
+
+            margin-bottom:
+                7px;
+
+        }
+
+
+        .unavailable-text {
+
+            color:
+                var(--muted);
+
+            font-size:
+                12px;
+
+            line-height:
+                1.8;
+
+            max-width:
+                500px;
+
+            margin:
+                0 auto 18px;
+
+        }
+
+
+        .unavailable-actions {
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            flex-wrap:
+                wrap;
+
+        }
+
+
+        .contact-btn {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            min-width:
+                140px;
+
+            min-height:
+                42px;
+
+            padding:
+                10px 18px;
+
+            border-radius:
+                30px;
+
+            font-size:
+                10px;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                1.3px;
+
+            transition:
+                all .25s ease;
+
+        }
+
+
+        .call-btn {
+
+            color:
+                var(--cream);
+
+            background:
+                transparent;
+
+            border:
+                1px solid
+                rgba(199,167,122,.55);
+
+        }
+
+
+        .call-btn:hover {
+
+            color:
+                #111;
+
+            background:
+                var(--gold);
+
+            border-color:
+                var(--gold);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .whatsapp-btn {
+
+            color:
+                #111;
+
+            background:
+                var(--gold);
+
+            border:
+                1px solid
+                var(--gold);
+
+        }
+
+
+        .whatsapp-btn:hover {
+
+            color:
+                var(--cream);
+
+            background:
+                transparent;
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =====================================================
+           NOTE
+        ===================================================== */
+
+        .note {
+
+            margin-top:
+                22px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                11px;
+
+            text-align:
+                center;
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media(max-width:850px) {
+
+            .grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .room-image {
+
+                height:
+                    260px;
+
+            }
+
+
+            .page {
+
+                padding-top:
+                    50px;
+
+            }
+
+        }
+
+
+        @media(max-width:520px) {
+
+            .topbar {
+
+                padding:
+                    0 18px;
+
+            }
+
+
+            .logo img {
+
+                width:
+                    52px;
+
+                height:
+                    52px;
+
+            }
+
+
+            .page {
+
+                padding-left:
+                    12px;
+
+                padding-right:
+                    12px;
+
+            }
+
+
+            .details,
+            .time-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .form,
+            .room-content {
+
+                padding:
+                    22px;
+
+            }
+
+
+            .heading {
+
+                font-size:
+                    42px;
+
+            }
+
+
+            .time-selects {
+
+                gap:
+                    6px;
+
+            }
+
+
+            .time-select {
+
+                padding:
+                    0 7px;
+
+                font-size:
+                    11px;
+
+            }
+
+
+            .unavailable-actions {
+
+                flex-direction:
+                    column;
+
+                width:
+                    100%;
+
+            }
+
+
+            .contact-btn {
+
+                width:
+                    100%;
+
+                max-width:
+                    250px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="topbar">
+
+    <a class="logo"
+       href="/">
+
+        <img
+            src="{{ url_for('static', filename='images/uruk-logo.png') }}"
+            alt="URUK">
+
+    </a>
+
+
+    <a class="back"
+       href="/">
+
+        ← Back to URUK
+
+    </a>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="page">
+
+    <div class="container">
+
+
+        <div class="eyebrow">
+
+            URUK STUDY HOUSE
+
+        </div>
+
+
+        <h1 class="heading">
+
+            Reserve your
+            <span>space.</span>
+
+        </h1>
+
+
+        <p class="intro">
+
+            Choose your preferred date and time,
+            enter your details, and reserve
+            {{ room['name'] }}
+            directly through URUK.
+
+        </p>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================= -->
+
+        <div class="grid">
+
+
+            <!-- =================================================
+                 ROOM INFORMATION
+            ================================================= -->
+
+            <section class="card">
+
+
+                {% if room['image'] %}
+
+                <img
+                    class="room-image"
+                    src="{{ url_for('static', filename=room['image']) }}"
+                    alt="{{ room['name'] }}">
+
+                {% endif %}
+
+
+                <div class="room-content">
+
+
+                    <div class="eyebrow">
+
+                        YOUR ROOM
+
+                    </div>
+
+
+                    <h2>
+
+                        {{ room['name'] }}
+
+                    </h2>
+
+
+                    <p class="desc">
+
+                        {{ room['description'] }}
+
+                    </p>
+
+
+                    <div class="details">
+
+
+                        <div class="detail">
+
+                            <small>
+                                Capacity
+                            </small>
+
+                            <strong>
+
+                                {{ room['capacity'] }}
+                                people
+
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <small>
+                                Price
+                            </small>
+
+                            <strong>
+
+                                {{ '%.2f'|format(room['price_per_hour']) }}
+                                JD / hour
+
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 BOOKING FORM
+            ================================================= -->
+
+            <section class="card form">
+
+
+                <h2>
+
+                    Reservation Details
+
+                </h2>
+
+
+                <p class="sub">
+
+                    Fill in your information to complete
+                    your booking.
+
+                </p>
+
+
+
+                <form id="bookingForm">
+
+
+                    <!-- NAME -->
+
+                    <div class="group">
+
+                        <label for="customerName">
+                            Full Name
+                        </label>
+
+                        <input
+                            class="input"
+                            id="customerName"
+                            type="text"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            class="input"
+                            id="phone"
+                            type="tel"
+                            placeholder="07XXXXXXXX"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            class="input"
+                            id="email"
+                            type="email"
+                            placeholder="example@email.com"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- DATE -->
+
+                    <div class="group">
+
+                        <label for="bookingDate">
+                            Booking Date
+                        </label>
+
+                        <input
+                            class="input"
+                            id="bookingDate"
+                            type="date"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         TIME
+                    ================================================= -->
+
+                    <div class="time-grid">
+
+
+                        <!-- START -->
+
+                        <div class="group">
+
+                            <label>
+                                Start Time
+                            </label>
+
+
+                            <div class="time-selects">
+
+
+                                <select
+                                    id="startHour"
+                                    class="time-select"
+                                    required>
+
+                                    <option value="">
+                                        Hour
+                                    </option>
+
+                                </select>
+
+
+                                <select
+                                    id="startMinute"
+                                    class="time-select"
+                                    required>
+
+                                    <option value="">
+                                        Min
+                                    </option>
+
+                                </select>
+
+
+                                <select
+                                    id="startPeriod"
+                                    class="time-select period"
+                                    required>
+
+                                    <option value="">
+                                        AM / PM
+                                    </option>
+
+                                    <option value="AM">
+                                        AM
+                                    </option>
+
+                                    <option value="PM">
+                                        PM
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <span class="time-hint">
+
+                                Choose the hour, minutes and period
+
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- END -->
+
+                        <div class="group">
+
+                            <label>
+                                End Time
+                            </label>
+
+
+                            <div class="time-selects">
+
+
+                                <select
+                                    id="endHour"
+                                    class="time-select"
+                                    required>
+
+                                    <option value="">
+                                        Hour
+                                    </option>
+
+                                </select>
+
+
+                                <select
+                                    id="endMinute"
+                                    class="time-select"
+                                    required>
+
+                                    <option value="">
+                                        Min
+                                    </option>
+
+                                </select>
+
+
+                                <select
+                                    id="endPeriod"
+                                    class="time-select period"
+                                    required>
+
+                                    <option value="">
+                                        AM / PM
+                                    </option>
+
+                                    <option value="AM">
+                                        AM
+                                    </option>
+
+                                    <option value="PM">
+                                        PM
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <span class="time-hint">
+
+                                Select when your booking ends
+
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         TOTAL
+                    ================================================= -->
+
+                    <div class="price">
+
+
+                        <div class="price-left">
+
+                            <span>
+                                Total
+                            </span>
+
+                            <span
+                                class="duration-text"
+                                id="duration">
+
+                                Choose your time
+
+                            </span>
+
+                        </div>
+
+
+                        <strong id="totalPrice">
+
+                            0.00 JD
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         BUTTON
+                    ================================================= -->
+
+                    <button
+                        class="btn"
+                        id="bookingButton"
+                        type="submit">
+
+                        CHECK AVAILABILITY & BOOK
+
+                    </button>
+
+
+
+                    <!-- =================================================
+                         MESSAGE
+                    ================================================= -->
+
+                    <div
+                        id="message"
+                        class="message">
+
+                    </div>
+
+
+                    <p class="note">
+
+                        Your reservation is confirmed
+                        only after the booking is
+                        successfully submitted.
+
+                    </p>
+
+
+                </form>
+
+            </section>
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     ROOM DATA
+===================================================== -->
+
+<div
+    id="room-data"
+    data-room-id="{{ room['id'] }}"
+    data-room-price="{{ room['price_per_hour'] }}">
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   ROOM DATA
+===================================================== */
+
+const roomData =
+    document.getElementById("room-data");
+
+
+const ROOM_ID =
+    Number(
+        roomData.dataset.roomId
+    );
+
+
+const ROOM_PRICE =
+    Number(
+        roomData.dataset.roomPrice
+    );
+
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const bookingForm =
+    document.getElementById(
+        "bookingForm"
+    );
+
+
+const startHour =
+    document.getElementById(
+        "startHour"
+    );
+
+
+const startMinute =
+    document.getElementById(
+        "startMinute"
+    );
+
+
+const startPeriod =
+    document.getElementById(
+        "startPeriod"
+    );
+
+
+const endHour =
+    document.getElementById(
+        "endHour"
+    );
+
+
+const endMinute =
+    document.getElementById(
+        "endMinute"
+    );
+
+
+const endPeriod =
+    document.getElementById(
+        "endPeriod"
+    );
+
+
+const bookingDate =
+    document.getElementById(
+        "bookingDate"
+    );
+
+
+const totalPrice =
+    document.getElementById(
+        "totalPrice"
+    );
+
+
+const durationText =
+    document.getElementById(
+        "duration"
+    );
+
+
+const message =
+    document.getElementById(
+        "message"
+    );
+
+
+const bookingButton =
+    document.getElementById(
+        "bookingButton"
+    );
+
+
+
+/* =====================================================
+   CREATE HOURS
+===================================================== */
+
+function createHours(select) {
+
+    for (
+        let hour = 1;
+        hour <= 12;
+        hour++
+    ) {
+
+        const option =
+            document.createElement(
+                "option"
+            );
+
+
+        option.value =
+            hour;
+
+
+        option.textContent =
+            String(hour)
+                .padStart(2, "0");
+
+
+        select.appendChild(
+            option
+        );
+
+    }
+
+}
+
+
+createHours(startHour);
+
+createHours(endHour);
+
+
+
+/* =====================================================
+   CREATE MINUTES
+   EVERY 5 MINUTES
+===================================================== */
+
+function createMinutes(select) {
+
+    for (
+        let minute = 0;
+        minute < 60;
+        minute += 5
+    ) {
+
+        const option =
+            document.createElement(
+                "option"
+            );
+
+
+        const value =
+            String(minute)
+                .padStart(2, "0");
+
+
+        option.value =
+            value;
+
+
+        option.textContent =
+            value;
+
+
+        select.appendChild(
+            option
+        );
+
+    }
+
+}
+
+
+createMinutes(startMinute);
+
+createMinutes(endMinute);
+
+
+
+/* =====================================================
+   MINIMUM DATE = TODAY
+===================================================== */
+
+const today =
+    new Date();
+
+
+today.setMinutes(
+    today.getMinutes()
+    -
+    today.getTimezoneOffset()
+);
+
+
+bookingDate.min =
+    today
+        .toISOString()
+        .split("T")[0];
+
+
+
+/* =====================================================
+   CONVERT 12-HOUR TO 24-HOUR
+===================================================== */
+
+function convertTo24Hour(
+    hour,
+    minute,
+    period
+) {
+
+    hour =
+        Number(hour);
+
+
+    if (period === "AM") {
+
+        if (hour === 12) {
+
+            hour = 0;
+
+        }
+
+    }
+
+    else {
+
+        if (hour !== 12) {
+
+            hour += 12;
+
+        }
+
+    }
+
+
+    return (
+        String(hour).padStart(2, "0")
+        +
+        ":"
+        +
+        String(minute).padStart(2, "0")
+    );
+
+}
+
+
+
+/* =====================================================
+   GET START
+===================================================== */
+
+function getStartTime() {
+
+    if (
+        !startHour.value ||
+        !startMinute.value ||
+        !startPeriod.value
+    ) {
+
+        return null;
+
+    }
+
+
+    return convertTo24Hour(
+        startHour.value,
+        startMinute.value,
+        startPeriod.value
+    );
+
+}
+
+
+
+/* =====================================================
+   GET END
+===================================================== */
+
+function getEndTime() {
+
+    if (
+        !endHour.value ||
+        !endMinute.value ||
+        !endPeriod.value
+    ) {
+
+        return null;
+
+    }
+
+
+    return convertTo24Hour(
+        endHour.value,
+        endMinute.value,
+        endPeriod.value
+    );
+
+}
+
+
+
+/* =====================================================
+   CALCULATE TOTAL
+===================================================== */
+
+function calculatePrice() {
+
+
+    const start =
+        getStartTime();
+
+
+    const end =
+        getEndTime();
+
+
+    if (!start || !end) {
+
+        durationText.textContent =
+            "Choose your time";
+
+
+        totalPrice.textContent =
+            "0.00 JD";
+
+
+        return;
+
+    }
+
+
+    const [startHour24, startMin] =
+        start
+            .split(":")
+            .map(Number);
+
+
+    const [endHour24, endMin] =
+        end
+            .split(":")
+            .map(Number);
+
+
+    const startMinutes =
+        startHour24 * 60
+        +
+        startMin;
+
+
+    const endMinutes =
+        endHour24 * 60
+        +
+        endMin;
+
+
+    if (
+        endMinutes <= startMinutes
+    ) {
+
+        durationText.textContent =
+            "End time must be after start";
+
+
+        totalPrice.textContent =
+            "0.00 JD";
+
+
+        return;
+
+    }
+
+
+    const duration =
+        (
+            endMinutes
+            -
+            startMinutes
+        )
+        /
+        60;
+
+
+    durationText.textContent =
+        duration === 1
+            ? "1 hour"
+            : `${duration} hours`;
+
+
+    totalPrice.textContent =
+        (
+            duration
+            *
+            ROOM_PRICE
+        ).toFixed(2)
+        +
+        " JD";
+
+}
+
+
+
+/* =====================================================
+   UPDATE TOTAL
+===================================================== */
+
+[
+    startHour,
+    startMinute,
+    startPeriod,
+    endHour,
+    endMinute,
+    endPeriod
+].forEach(
+    element => {
+
+        element.addEventListener(
+            "change",
+            calculatePrice
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   NORMAL MESSAGE
+===================================================== */
+
+function showMessage(
+    text,
+    type
+) {
+
+    message.innerHTML =
+        text;
+
+
+    message.className =
+        "message " + type;
+
+}
+
+
+
+/* =====================================================
+   UNAVAILABLE MESSAGE
+===================================================== */
+
+function showUnavailableMessage() {
+
+    message.innerHTML = `
+
+        <div class="unavailable-box">
+
+            <div class="unavailable-icon">
+                ◷
+            </div>
+
+            <div class="unavailable-title">
+
+                This time is currently unavailable.
+
+            </div>
+
+            <div class="unavailable-text">
+
+                If you need this room specifically
+                and this is the only suitable time,
+                contact URUK directly and we will
+                help you find the best available option.
+
+            </div>
+
+            <div class="unavailable-actions">
+
+                <a
+                    href="tel:+962795379625"
+                    class="contact-btn call-btn">
+
+                    CALL URUK
+
+                </a>
+
+
+                <a
+                    href="https://wa.me/962795379625"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-btn whatsapp-btn">
+
+                    WHATSAPP URUK
+
+                </a>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    message.className =
+        "message error";
+
+}
+
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+bookingForm.addEventListener(
+    "submit",
+    async function(event) {
+
+
+        event.preventDefault();
+
+
+        const customerName =
+            document
+                .getElementById(
+                    "customerName"
+                )
+                .value
+                .trim();
+
+
+        const phone =
+            document
+                .getElementById(
+                    "phone"
+                )
+                .value
+                .trim();
+
+
+        const email =
+            document
+                .getElementById(
+                    "email"
+                )
+                .value
+                .trim();
+
+
+        const date =
+            bookingDate.value;
+
+
+        const start =
+            getStartTime();
+
+
+        const end =
+            getEndTime();
+
+
+
+        /* =================================================
+           VALIDATION
+        ================================================= */
+
+        if (
+            !customerName ||
+            !phone ||
+            !email ||
+            !date ||
+            !start ||
+            !end
+        ) {
+
+            showMessage(
+                "Please fill in all required fields.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        /* =================================================
+           TIME VALIDATION
+        ================================================= */
+
+        const [sh, sm] =
+            start
+                .split(":")
+                .map(Number);
+
+
+        const [eh, em] =
+            end
+                .split(":")
+                .map(Number);
+
+
+        const startMinutes =
+            sh * 60 + sm;
+
+
+        const endMinutes =
+            eh * 60 + em;
+
+
+        if (
+            endMinutes <= startMinutes
+        ) {
+
+            showMessage(
+                "End time must be after start time.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+
+        /* =================================================
+           DISABLE BUTTON
+        ================================================= */
+
+        bookingButton.disabled =
+            true;
+
+
+        bookingButton.textContent =
+            "CHECKING AVAILABILITY...";
+
+
+
+        /* =================================================
+           CHECK AVAILABILITY
+        ================================================= */
+
+        try {
+
+            const availabilityResponse =
+                await fetch(
+                    `/availability?room_id=${ROOM_ID}` +
+                    `&date=${encodeURIComponent(date)}` +
+                    `&start_time=${encodeURIComponent(start)}` +
+                    `&end_time=${encodeURIComponent(end)}`
+                );
+
+
+            const availability =
+                await availabilityResponse.json();
+
+
+
+            /* =================================================
+               NOT AVAILABLE
+            ================================================= */
+
+            if (
+                !availability.available
+            ) {
+
+                showUnavailableMessage();
+
+
+                bookingButton.disabled =
+                    false;
+
+
+                bookingButton.textContent =
+                    "CHECK AVAILABILITY & BOOK";
+
+
+                return;
+
+            }
+
+
+
+            /* =================================================
+               CREATE BOOKING
+            ================================================= */
+
+            bookingButton.textContent =
+                "CREATING BOOKING...";
+
+
+            const response =
+                await fetch(
+                    "/bookings",
+                    {
+
+                        method:
+                            "POST",
+
+                        headers: {
+
+                            "Content-Type":
+                                "application/json"
+
+                        },
+
+                        body:
+                            JSON.stringify({
+
+                                room_id:
+                                    ROOM_ID,
+
+                                customer_name:
+                                    customerName,
+
+                                phone:
+                                    phone,
+
+                                email:
+                                    email,
+
+                                booking_date:
+                                    date,
+
+                                start_time:
+                                    start,
+
+                                end_time:
+                                    end
+
+                            })
+
+                    }
+                );
+
+
+            const result =
+                await response.json();
+
+
+
+            /* =================================================
+               BOOKING FAILED
+            ================================================= */
+
+            if (
+                !response.ok ||
+                !result.success
+            ) {
+
+                /*
+                   If another customer booked
+                   the room between checking and
+                   submitting, show the same
+                   contact option.
+                */
+
+                if (
+                    response.status === 409
+                ) {
+
+                    showUnavailableMessage();
+
+                }
+
+                else {
+
+                    showMessage(
+                        result.message ||
+                        "Something went wrong.",
+                        "error"
+                    );
+
+                }
+
+
+                bookingButton.disabled =
+                    false;
+
+
+                bookingButton.textContent =
+                    "CHECK AVAILABILITY & BOOK";
+
+
+                return;
+
+            }
+
+
+
+            /* =================================================
+               SUCCESS
+            ================================================= */
+
+            showMessage(
+                `
+                Booking confirmed successfully!
+                Your booking number is
+                #${result.booking_id}.
+                Total:
+                ${Number(result.total_price).toFixed(2)}
+                JD.
+                `,
+                "success"
+            );
+
+
+            bookingForm.reset();
+
+
+            durationText.textContent =
+                "Choose your time";
+
+
+            totalPrice.textContent =
+                "0.00 JD";
+
+
+            bookingButton.disabled =
+                false;
+
+
+            bookingButton.textContent =
+                "BOOKING CONFIRMED";
+
+        }
+
+
+        /* =================================================
+           CONNECTION ERROR
+        ================================================= */
+
+        catch (error) {
+
+            console.error(
+                "Booking error:",
+                error
+            );
+
+
+            showMessage(
+                "Could not connect to the booking server. Please try again.",
+                "error"
+            );
+
+
+            bookingButton.disabled =
+                false;
+
+
+            bookingButton.textContent =
+                "CHECK AVAILABILITY & BOOK";
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
